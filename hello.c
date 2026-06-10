@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int add(int a, int b);
+
+
 int main(void) {
     printf("Hello, world!\n");
     printf("This is a simple C program.\n");
@@ -14,13 +17,20 @@ int main(void) {
     for (int i = 0; i < 20; ++i) {
         numbers[i] = i + 1;
     } 
+    
     printf("Numbers from 1 to 20:\n");
 
     printf("Allocated space for 20 integers.\n");
     for (int i = 0; i < 20; ++i) {
         printf("numbers[%d] = %d\n", i, numbers[i]);
     }
+    int sum = add(5, 10);
+    printf("The sum of 5 and 10 is: %d\n", sum);
 
     free(numbers);
     return 0;
+}
+
+int add(int a, int b) {
+    return a + b;
 }
