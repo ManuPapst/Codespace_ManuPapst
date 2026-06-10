@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int add(int a, int b);
 
@@ -14,13 +15,12 @@ int main(void) {
         return 1;
     }
 
+    srand((unsigned)time(NULL));
     for (int i = 0; i < 20; ++i) {
-        numbers[i] = i + 1;
-    } 
-    
-    printf("Numbers from 1 to 20:\n");
+        numbers[i] = rand() % 101 + 100; /* random between 100 and 200 inclusive */
+    }
 
-    printf("Allocated space for 20 integers.\n");
+    printf("Allocated space for 20 integers (random 100-200):\n");
     for (int i = 0; i < 20; ++i) {
         printf("numbers[%d] = %d\n", i, numbers[i]);
     }
