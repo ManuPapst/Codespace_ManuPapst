@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+
+struct person {
+    char name[50];
+    int age;
+};
 
 int add(int a, int b);
 
@@ -26,6 +32,12 @@ int main(void) {
     }
     int sum = add(5, 10);
     printf("The sum of 5 and 10 is: %d\n", sum);
+
+    struct person sue;
+    strncpy(sue.name, "Sue", sizeof(sue.name));
+    sue.name[sizeof(sue.name)-1] = '\0';
+    sue.age = 20;
+    printf("Person: name=%s, age=%d\n", sue.name, sue.age);
 
     free(numbers);
     return 0;
