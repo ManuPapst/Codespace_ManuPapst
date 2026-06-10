@@ -3,10 +3,10 @@
 #include <time.h>
 #include <string.h>
 
-struct person {
+typedef struct {
     char name[50];
     int age;
-};
+} Person;
 
 int add(int a, int b);
 
@@ -33,7 +33,7 @@ int main(void) {
     int sum = add(5, 10);
     printf("The sum of 5 and 10 is: %d\n", sum);
 
-    struct person sue;
+    Person sue;
     strncpy(sue.name, "Sue", sizeof(sue.name));
     sue.name[sizeof(sue.name)-1] = '\0';
     sue.age = 20;
